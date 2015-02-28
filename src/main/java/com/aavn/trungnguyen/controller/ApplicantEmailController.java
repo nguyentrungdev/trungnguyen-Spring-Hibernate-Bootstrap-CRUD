@@ -46,7 +46,6 @@ public class ApplicantEmailController {
 	
 	@RequestMapping("/applicantEmails")
 	public String showListPage(Model model, @ModelAttribute("pageAction") String pageAction, WebRequest request, HttpServletRequest servletRequest) {
-		System.out.println("pageAction " + pageAction);
 		if ("delete".equals(pageAction) && request.getParameterValues("applicantEmailIds") != null) {
 			String[] applicantEmailIds = request.getParameterValues("applicantEmailIds");
 			applicantEmailService.delete(applicantEmailIds);

@@ -88,10 +88,8 @@ public class ApplicantEmailDAOImpl implements IApplicantEmailDAO{
 			String hql = "Delete From ApplicantEmail AM Where AM.id = :id";
 			Query query = session.createQuery(hql);
 			for (int i = 0; i < ids.length; i++) {
-				System.out.println(ids[i]);
 				query.setInteger("id", Integer.parseInt(ids[i]));
 				query.executeUpdate();
-				System.out.println(query.getQueryString());
 			}
 			tx.commit();
 		} catch (Exception ex) {
